@@ -56,7 +56,7 @@ matrix:
       addons:
         homebrew:
           packages:
-          - gcc
+          - gcc@8
           - cmake
           update: true
       before_install:
