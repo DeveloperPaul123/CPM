@@ -61,7 +61,9 @@ matrix:
           update: true
       before_install:
       script:
-        - export PATH="/usr/local/bin:$PATH";
+        - export PATH="$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH"
+        - export CC=gcc-8; export CXX=g++-8;
+        - echo "$(CXX) --version"
         - python3 examples/run_all.py
 
     - os: windows
