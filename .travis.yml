@@ -14,7 +14,7 @@ matrix:
   include:
     - os: linux
       compiler: gcc
-      addons: &gcc8
+      addons:
         apt:
           sources: *all_sources
           packages: 
@@ -32,6 +32,10 @@ matrix:
                 - clang-6.0
       env:
         - MATRIX_EVAL="export CC=clang-6.0; export CXX=clang++-6.0;"
+
+    - os: osx
+
+    - os: windows
 
 before_install:
   # Update compilers
