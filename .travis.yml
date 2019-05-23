@@ -60,10 +60,10 @@ matrix:
           - cmake
           update: true
       before_install:
-      script:
         - export PATH="$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH"
         - export CC=gcc-8; export CXX=g++-8;
-        - echo "$(CXX) --version"
+        - echo "$($CXX) --version"
+      script:
         - python3 examples/run_all.py
 
     - os: windows
