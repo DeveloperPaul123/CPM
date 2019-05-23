@@ -31,7 +31,9 @@ matrix:
     #     - sudo sh cmake.sh --skip-license --exclude-subdir --prefix=/usr/local
     #     - export PATH=/usr/local/bin:$PATH
     #     - cmake --version
-  
+    #   script:
+    #     - python3 examples/run_all.py
+
     # - os: linux
     #   compiler: clang
     #   sudo: require
@@ -45,6 +47,9 @@ matrix:
     #   env:
     #     - MATRIX_EVAL="export CC=clang-6.0; export CXX=clang++-6.0;"
     #   before_install: *update_cmake
+    #   script:
+    #     - python3 examples/run_all.py
+
 
     - os: osx
       compiler: gcc
@@ -55,15 +60,16 @@ matrix:
           - cmake
           update: true
       before_install:
-
+      script:
+        - python3 examples/run_all.py
 
     - os: windows
       before_install:
         - choco install python3
         - export PATH="/c/Python37:/c/Python37/Scripts:$PATH"
         - python -m pip install --upgrade pip wheel
+      script:
+        - python examples/run_all.py
 
 
-script:
-  - python3 examples/run_all.py
  
