@@ -11,8 +11,7 @@ python:
   - 3.7
 
 matrix:
-
-  # include:
+  include:
   #   - os: linux
   #     compiler: gcc
   #     addons:
