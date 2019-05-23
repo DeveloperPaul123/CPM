@@ -12,6 +12,7 @@ python:
 
 matrix:
   include:
+
   #   - os: linux
   #     compiler: gcc
   #     addons:
@@ -44,12 +45,11 @@ matrix:
   #     before_install: *update_cmake
 
     - os: osx
-      compiler: clang
+      compiler: gcc
         addons:
           homebrew:
             packages:
-            - cmake
-            update: true
+            - gcc
 
     - os: windows
       before_install:
