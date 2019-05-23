@@ -44,17 +44,6 @@ matrix:
         - MATRIX_EVAL="export CC=clang-6.0; export CXX=clang++-6.0;"
       before_install: *update_cmake
 
-    - os: osx
-      compiler: gcc
-        addons:
-          homebrew:
-            packages:
-            - gcc
-      before_install:
-
-    - os: windows
-      before_install:
-
 
 script:
   - python3 examples/run_all.py
