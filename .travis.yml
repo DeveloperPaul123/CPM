@@ -61,7 +61,7 @@ matrix:
           update: true
       before_install:
       script:
-        - export CC=gcc-8; export CXX=CC=g++-8;
+        - export PATH="/usr/local/bin:$PATH";
         - python3 examples/run_all.py
 
     - os: windows
