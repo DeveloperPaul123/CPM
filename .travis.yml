@@ -22,15 +22,15 @@ matrix:
             - g++-8
       env:
         - MATRIX_EVAL="export CC=gcc-8; export CXX=g++-8;"
-        before_install: &update_cmake
-          # Update compilers
-          - eval "${MATRIX_EVAL}"
-          - echo "CC=$CC CXX=$CXX"
-          # Install a supported cmake version (>= 3.14)
-          - wget -O cmake.sh https://cmake.org/files/v3.14/cmake-3.14.0-Linux-x86_64.sh 
-          - sudo sh cmake.sh --skip-license --exclude-subdir --prefix=/usr/local
-          - export PATH=/usr/local/bin:$PATH
-          - cmake --version
+      before_install: &update_cmake
+        # Update compilers
+        - eval "${MATRIX_EVAL}"
+        - echo "CC=$CC CXX=$CXX"
+        # Install a supported cmake version (>= 3.14)
+        - wget -O cmake.sh https://cmake.org/files/v3.14/cmake-3.14.0-Linux-x86_64.sh 
+        - sudo sh cmake.sh --skip-license --exclude-subdir --prefix=/usr/local
+        - export PATH=/usr/local/bin:$PATH
+        - cmake --version
   
     - os: linux
       compiler: clang
@@ -48,10 +48,10 @@ matrix:
 
     - os: osx
       compiler: gcc
-        addons:
-          homebrew:
-            packages:
-            - gcc
+      addons:
+        homebrew:
+          packages:
+          - gcc
       before_install:
 
     - os: windows
