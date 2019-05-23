@@ -52,7 +52,10 @@ matrix:
         homebrew:
           packages:
           - gcc
+          - cmake
+          update: true
       before_install:
+
 
     - os: windows
       before_install:
